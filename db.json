@@ -1,0 +1,34 @@
+[
+   {
+    "id": 1,
+    "question":"Quelle est la couleur du cheval blanc de napoléon ?",  
+    "reponse1":["Blanc", true],
+    "reponse2":["Noir", false],
+    "reponse3":["Rouge", false],
+    "reponse4":["Arc-en-Ciel", false]
+},
+{
+        "id":2,
+        "question":"Quelle est la couleur du cheval Noir de Jules César?",  
+        "reponse1":["Blanc", false],
+        "reponse2":["Noir", true],
+        "reponse3":["Rouge", false],
+        "reponse4":["Arc-en-Ciel", false]
+ },
+ {
+    "id":3,
+    "question":"Quelle est la couleur du cheval Brun d'Attila?",  
+    "reponse1":["Brun", true],
+    "reponse2":["Noir", false],
+    "reponse3":["Rouge", false],
+    "reponse4":["Arc-en-Ciel", false]
+},
+{
+    "id":4,
+    "question":"Quelle est la couleur du cheval Gris de Genghis Khan?",  
+    "reponse1":["Blanc", false],
+    "reponse2":["Noir", false],
+    "reponse3":["Gris", true],
+    "reponse4":["Arc-en-Ciel", false]
+}
+]
