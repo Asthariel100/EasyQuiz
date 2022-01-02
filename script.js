@@ -13,6 +13,10 @@ async function getquestions(quiz){
     document.getElementById('reponse2').textContent = quiz.questions[quiz.index].reponse2
     document.getElementById('reponse3').textContent = quiz.questions[quiz.index].reponse3
     document.getElementById('reponse4').textContent = quiz.questions[quiz.index].reponse4
+    document.getElementById('reponse1').value = quiz.questions[quiz.index].reponse1
+    document.getElementById('reponse2').value = quiz.questions[quiz.index].reponse2
+    document.getElementById('reponse3').value = quiz.questions[quiz.index].reponse3
+    document.getElementById('reponse4').value = quiz.questions[quiz.index].reponse4
 }
 async function startquiz(quiz){
     await getquestions(quiz)
@@ -20,12 +24,11 @@ async function startquiz(quiz){
 }
 
 startquiz(quiz)
-//ajout de score sur la bonne reponse//
+//fonction bonne réponse + score//
+var score = 0;
 function check(){
-    var score = '';
     var q1 = document.quiz.reponse.value
-    //il faudrais en value l'index//
-    if(q1 == 'reponse1'){
+    if(q1 == quiz.questions[quiz.index].correct){
         score = score + 5
         document.getElementById('score').textContent = ' Bonne réponse votre score est de ' + score
     quiz.index=quiz.index +1

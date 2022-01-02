@@ -13,7 +13,7 @@
         "question":"Quelle est la couleur du cheval Noir de Jules César?",  
         "reponse1":"Blanc",
         "reponse2":"Noir",
-        "reponse3":"Rouge",
+        "reponse3":"Bleu",
         "reponse4":"Vert",
         "correct":"Noir"
  },
@@ -43,5 +43,8 @@
     "reponse3":"Gris",
     "reponse4":"Bleu",
     "correct":"Roux"
+},
+{
+"correction":["Blanc","Noir","Brun","Gris","Roux"]
 }
 ]
