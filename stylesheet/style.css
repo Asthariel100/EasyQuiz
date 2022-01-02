@@ -4,6 +4,7 @@
 }
 p{
     color:blue;
+    font-size:25px;
 }
 h1{
     display: flex;
@@ -22,7 +23,7 @@ h2{
 main{
 background-color: darkblue;
 }
-aside{
+form{
     flex-direction: column; 
     color: white;
 }
@@ -31,7 +32,7 @@ div{
     justify-content: left;
     padding:5%;
 }
-#btnn{
+#bt{
     display:flex;
     justify-content: center;
 }
