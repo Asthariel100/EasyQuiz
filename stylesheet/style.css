@@ -55,4 +55,10 @@ button{
         transition-duration: 0.4s;
         cursor: pointer;
       }
+    .vrai{
+          color:chartreuse
+        }
+    .faux{
+            color:crimson
+        }
       

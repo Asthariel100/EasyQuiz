@@ -13,26 +13,26 @@
 </head>
 <header>
     <h1>Easy Quiz !!!!</h1>
-    <h2 id="test"></h2>
+    <h2 id="question"></h2>
 </header>
     <main>
 
-        <form name="quiz">
-            <div><input name="reponse"type="radio" value="Blanc">
+        <form name="test">
+            <div><input id="reponse1"class="messageradio" name="reponse"type="radio">
                 <label for="A">&nbspA&nbsp</label>
-                <span id="reponse1"></span>
+                <span id="reponse11"class="vrai"></span>
             </div>
-            <div><input name="reponse"type="radio" value="reponse2">
+            <div><input id="reponse2"class="messageradio" name="reponse"type="radio" >
                 <label for="B">&nbspB&nbsp</label>
-                <span id="reponse2"></span>
+                <span id="reponse22"class="vrai"></span>
             </div>
-            <div> <input name="reponse"type="radio" value="reponse3">
+            <div> <input id="reponse3"class="messageradio"  name="reponse"type="radio" >
                 <label for="C">&nbspC&nbsp</label>
-                <span id="reponse3"></span>
+                <span id="reponse33"class="vrai"></span>
             </div>
-            <div> <input name="reponse"type="radio" value="reponse4">
+            <div> <input id="reponse4"class="messageradio" name="reponse"type="radio"  >
                 <label for="D">&nbspD&nbsp</label>
-                <span id="reponse4"></span>
+                <span id="reponse44"class="vrai"></span>
             </div>
             <div id="bt"><button id="btn" type="button" onclick=check()>OK</button></div>
             <p id="score"></p>
@@ -41,7 +41,7 @@
 
 
     </main>
-    <footer>
+    <footer id="really">
         &copy quizeasycorp
     </footer>
 </body>
