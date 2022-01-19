@@ -38,7 +38,7 @@ var score = 0;
 
 function check(){ 
     var nbq = quiz.index
-    console.log(nbq)
+
  /* je recupére la valeur de l'input qui est checked*/  
     var q1 = document.querySelector('input[name="reponse"]:checked').value 
     /*j'appel la fonction colorized qui mets en vert la bonne réponse, en rouge la mauvaise*/
@@ -54,9 +54,9 @@ function check(){
     addcom()
     document.getElementById('score').textContent = 'Bonne réponse'
     /*jappel ma fonction "right" pour les réponses valide avec un délai pour l'anecdote*/
-setTimeout(right,2000);      
+setTimeout(right,2000);     
     }
-    else if(q1 != quiz.questions[quiz.index].correct){
+    else{
     var qw = document.querySelector('h2')
     /*Je mets la question en rouge*/
     qw.style.color='rgb(252, 0, 50)'
@@ -64,9 +64,9 @@ setTimeout(right,2000);
     /*jappel ma fonction "wrong" pour les réponses fausses avec un délai pour la correction*/
 setTimeout(wrong,2000);
 }
-else if(nbq==3){
-    nbq==quiz.index
-pagedesscores()
+if(nbq==2){
+    if (document.getElementById('please') != null){suppcom()}
+   endquiz()   
 }}
 /* La réponse est bonne, je charge la question suivante et j'augmente le score*/
 function right(){
@@ -135,16 +135,20 @@ let node = document.getElementById('please');
 if (node.parentNode) {
   node.parentNode.removeChild(node);
 }
+
 }
-function pagedesscores(){
-    var q2 = document.getElementById('question')
-        q2.style.color='cornflowerblue'
-        document.getElementById('score').textContent = 'Votre score total est de'+score
-    let node = document.getElementById('apocalypse');
-if (node.parentNode) {
-  node.parentNode.removeChild(node);
-}
-const pagedefin = element.innerHtml
-element.innerHtml = `<div> Ya kelkun...youhouuuu</div>`
-}
+function endquiz(){
+    document.getElementById('question').textContent = "Bravo vous avez terminé le quiz !!!"
+    const com = document.getElementById("commentaire")
+    let newCom = document.createElement('h3');
+    newCom.id = "please"
+    newCom.textContent = document.getElementById('score').textContent = 'Votre score total est de'+score;
+    com.appendChild(newCom);
+    const user = document.getElementById("commentaires")
+    let newuser = document.createElement('input')
+    newuser.placeholder = 'Entrez votre nom ici'
+    newuser.textContent = 'Entrez votre nom ici'
+
+    }
+
 
