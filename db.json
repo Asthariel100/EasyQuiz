@@ -5,7 +5,7 @@
     "reponse2":"Noir",
     "reponse3":"Rouge", 
     "reponse4":"Arc-en-Ciel",
-    "commentaire":"effectivement il était Blanc!",
+    "commentaire":"Effectivement il est Blanc!",
     "correct":"Blanc"
 },
 {
@@ -14,7 +14,7 @@
         "reponse2":"Noir",
         "reponse3":"Bleu",
         "reponse4":"Vert",
-        "commentaire":"effectivement il était Noir!",
+        "commentaire":"Effectivement il est Noir!",
         "correct":"Noir"
  },
  {
@@ -23,7 +23,7 @@
     "reponse2":"Noir", 
     "reponse3":"Rouge", 
     "reponse4":"Vert",
-    "commentaire":"effectivement il était Brun!",
+    "commentaire":"Effectivement il est Brun!",
     "correct":"Brun"
 },
 {
@@ -32,16 +32,61 @@
     "reponse2":"Noir",
     "reponse3":"Gris",
     "reponse4":"Bleu",
-    "commentaire":"effectivement il était Gris!",
+    "commentaire":"Effectivement il est Gris!",
     "correct":"Gris"
 },
 {
-    "question":"Quelle est la couleur du cheval Roux de Cartam?",  
+    "question":"Quelle est la couleur du cheval Rouge du roi de Suéde ?",  
+    "reponse1":"Blanc",
+    "reponse2":"Roux",
+    "reponse3":"Rouge",
+    "reponse4":"Bleu",
+    "commentaire":"Effectivement il est Rouge!",
+    "correct":"Rouge"
+},
+{
+    "question":"Quelle est la couleur du cheval Beige de Hercule Poirot?",  
+    "reponse1":"Blanc",
+    "reponse2":"Roux",
+    "reponse3":"Gris",
+    "reponse4":"Beige",
+    "commentaire":"Effectivement il est Beige!",
+    "correct":"Beige"
+},
+{
+    "question":"Quelle est la couleur du cheval Bleu de Superman?",  
     "reponse1":"Blanc",
     "reponse2":"Roux",
     "reponse3":"Gris",
     "reponse4":"Bleu",
-    "commentaire":"effectivement il était Roux!",
-    "correct":"Roux"
+    "commentaire":"Effectivement il est Bleu!",
+    "correct":"Bleu"
+},
+{
+    "question":"Quelle est la couleur du cheval Argenté du Surfer Argenté?",  
+    "reponse1":"Blanc",
+    "reponse2":"Argenté",
+    "reponse3":"Gris",
+    "reponse4":"Bleu",
+    "commentaire":"Effectivement il est Argenté!",
+    "correct":"Argenté"
+},
+{
+    "question":"Quelle est la couleur du cheval Violet du Chapelier Fou?",  
+    "reponse1":"Blanc",
+    "reponse2":"Roux",
+    "reponse3":"Gris",
+    "reponse4":"Violet",
+    "commentaire":"Effectivement il est Violet!",
+    "correct":"Violet"
+},
+{
+    "question":"Quelle est la couleur du cheval Arc-en-Ciel du Petit Lutin Arc-en-ciel?",  
+    "reponse1":"Arc-en-Ciel",
+    "reponse2":"Roux",
+    "reponse3":"Gris",
+    "reponse4":"Bleu",
+    "commentaire":"Effectivement il est Arc-en-Ciel!",
+    "correct":"Arc-en-Ciel"
 }
 ]

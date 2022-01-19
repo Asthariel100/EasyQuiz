@@ -1,0 +1,2 @@
+
+localStorage.setitem('score')

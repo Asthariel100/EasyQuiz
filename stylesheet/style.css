@@ -6,6 +6,9 @@ p{
     color:blue;
     font-size:25px;
 }
+#commentaire{
+    color:black;
+}
 h1{
     display: flex;
     justify-content:center;

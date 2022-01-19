@@ -34,22 +34,24 @@ async function startquiz(quiz){
 /*j'appel ma fonction startquiz*/
 startquiz(quiz)
 /* je crée une variable pour le score qui débute à 0 */
-
-
-
 var score = 0;
 
 function check(){ 
-   /* for(i=0;i<5;i++){*/
+    var nbq = quiz.index
+    console.log(nbq)
  /* je recupére la valeur de l'input qui est checked*/  
     var q1 = document.querySelector('input[name="reponse"]:checked').value 
     /*j'appel la fonction colorized qui mets en vert la bonne réponse, en rouge la mauvaise*/
     colorized(q1)
+    
     /* Je vérifie si le radio checked correspond à la bonne réponse(correct)*/
-   if(q1 == quiz.questions[quiz.index].correct){  
+   if(q1 == quiz.questions[quiz.index].correct){ 
+    score = score + 5 
     var qr = document.querySelector('h2')
     /*Je mets la question en vert*/
     qr.style.color='rgb(54, 228, 19)'
+    /* ajout du commentaire*/
+    addcom()
     document.getElementById('score').textContent = 'Bonne réponse'
     /*jappel ma fonction "right" pour les réponses valide avec un délai pour l'anecdote*/
 setTimeout(right,2000);      
@@ -62,10 +64,14 @@ setTimeout(right,2000);
     /*jappel ma fonction "wrong" pour les réponses fausses avec un délai pour la correction*/
 setTimeout(wrong,2000);
 }
+else if(nbq==3){
+    nbq==quiz.index
+pagedesscores()
+}}
 /* La réponse est bonne, je charge la question suivante et j'augmente le score*/
 function right(){
     creset()
-    score = score + 5
+    suppcom()
     var question = document.querySelector('h2')
     question.style.color='white'  
     quiz.index = quiz.index+1
@@ -95,7 +101,7 @@ function wrong(){
     document.getElementById('reponse33').value = quiz.questions[quiz.index].reponse3
     document.getElementById('reponse44').value = quiz.questions[quiz.index].reponse4
  } 
-}
+
 /*Mets en vert la bonne réponse et en rouge les mauvaises*/
 function colorized (){
     for(i=1;i<5;i++){
@@ -113,3 +119,32 @@ function creset(){
         var q2 = document.getElementById('reponse'+i)
         q2.style.color='white'
 }}
+/*Ajouter commentaire*/
+function addcom(){
+    const com = document.getElementById("commentaire")
+    let newCom = document.createElement('h3');
+    /*ça c'est l'id des moments difficile =')*/
+    newCom.id = "please"
+    newCom.textContent = quiz.questions[quiz.index].commentaire;
+    com.appendChild(newCom);
+    }
+/* Retirer le commentaire*/
+function suppcom(){
+
+let node = document.getElementById('please');
+if (node.parentNode) {
+  node.parentNode.removeChild(node);
+}
+}
+function pagedesscores(){
+    var q2 = document.getElementById('question')
+        q2.style.color='cornflowerblue'
+        document.getElementById('score').textContent = 'Votre score total est de'+score
+    let node = document.getElementById('apocalypse');
+if (node.parentNode) {
+  node.parentNode.removeChild(node);
+}
+const pagedefin = element.innerHtml
+element.innerHtml = `<div> Ya kelkun...youhouuuu</div>`
+}
+
