@@ -16,14 +16,14 @@ function shuffleArray(array) {
 /* J'appel ma première question */
  function questionQuiz(quiz){
     document.getElementById('question').textContent = quiz.questions[quiz.index].question
-    document.getElementById('reponse11').textContent = quiz.questions[quiz.index].reponse1
-    document.getElementById('reponse22').textContent = quiz.questions[quiz.index].reponse2
-    document.getElementById('reponse33').textContent = quiz.questions[quiz.index].reponse3
-    document.getElementById('reponse44').textContent = quiz.questions[quiz.index].reponse4
-    document.getElementById('reponse1').value = quiz.questions[quiz.index].reponse1
-    document.getElementById('reponse2').value = quiz.questions[quiz.index].reponse2
-    document.getElementById('reponse3').value = quiz.questions[quiz.index].reponse3
-    document.getElementById('reponse4').value = quiz.questions[quiz.index].reponse4
+    document.getElementById('reponse1').textContent = quiz.questions[quiz.index].reponse1
+    document.getElementById('reponse2').textContent = quiz.questions[quiz.index].reponse2
+    document.getElementById('reponse3').textContent = quiz.questions[quiz.index].reponse3
+    document.getElementById('reponse4').textContent = quiz.questions[quiz.index].reponse4
+    document.getElementById('reponse11').value = quiz.questions[quiz.index].reponse1
+    document.getElementById('reponse22').value = quiz.questions[quiz.index].reponse2
+    document.getElementById('reponse33').value = quiz.questions[quiz.index].reponse3
+    document.getElementById('reponse44').value = quiz.questions[quiz.index].reponse4
 }
 /* fonction de démarrage du quiz, je recupére le json, je mélange mon tableau, j'affiche la première question*/
 async function startquiz(quiz){
@@ -34,44 +34,82 @@ async function startquiz(quiz){
 /*j'appel ma fonction startquiz*/
 startquiz(quiz)
 /* je crée une variable pour le score qui débute à 0 */
+
+
+
 var score = 0;
 
 function check(){ 
    /* for(i=0;i<5;i++){*/
  /* je recupére la valeur de l'input qui est checked*/  
-    var q1 = document.querySelector('input[name="reponse"]:checked').value
+    var q1 = document.querySelector('input[name="reponse"]:checked').value 
+    /*j'appel la fonction colorized qui mets en vert la bonne réponse, en rouge la mauvaise*/
+    colorized(q1)
     /* Je vérifie si le radio checked correspond à la bonne réponse(correct)*/
-    
-   if(q1 == quiz.questions[quiz.index].correct){   
-/* La réponse est bonne, je charge la question suivante et j'augmente le score*/
-
-        score = score + 5
-        
-        quiz.index = quiz.index+1
-        document.getElementById('question').textContent = quiz.questions[quiz.index].question
-        document.getElementById('reponse11').textContent = quiz.questions[quiz.index].reponse1
-        document.getElementById('reponse22').textContent = quiz.questions[quiz.index].reponse2
-        document.getElementById('reponse33').textContent = quiz.questions[quiz.index].reponse3
-        document.getElementById('reponse44').textContent = quiz.questions[quiz.index].reponse4
-        document.getElementById('reponse1').value = quiz.questions[quiz.index].reponse1
-        document.getElementById('reponse2').value = quiz.questions[quiz.index].reponse2
-        document.getElementById('reponse3').value = quiz.questions[quiz.index].reponse3
-        document.getElementById('reponse4').value = quiz.questions[quiz.index].reponse4
-        document.getElementById('score').textContent = 'Bonne réponse'
+   if(q1 == quiz.questions[quiz.index].correct){  
+    var qr = document.querySelector('h2')
+    /*Je mets la question en vert*/
+    qr.style.color='rgb(54, 228, 19)'
+    document.getElementById('score').textContent = 'Bonne réponse'
+    /*jappel ma fonction "right" pour les réponses valide avec un délai pour l'anecdote*/
+setTimeout(right,2000);      
     }
     else if(q1 != quiz.questions[quiz.index].correct){
-        /*La réponse est fausse, je charge la question suivante sans modifier le score */
-        quiz.index = quiz.index+1
-        document.getElementById('question').textContent = quiz.questions[quiz.index].question
-        document.getElementById('reponse11').textContent = quiz.questions[quiz.index].reponse1
-        document.getElementById('reponse22').textContent = quiz.questions[quiz.index].reponse2
-        document.getElementById('reponse33').textContent = quiz.questions[quiz.index].reponse3
-        document.getElementById('reponse44').textContent = quiz.questions[quiz.index].reponse4
-        document.getElementById('reponse1').value = quiz.questions[quiz.index].reponse1
-        document.getElementById('reponse2').value = quiz.questions[quiz.index].reponse2
-        document.getElementById('reponse3').value = quiz.questions[quiz.index].reponse3
-        document.getElementById('reponse4').value = quiz.questions[quiz.index].reponse4
-        document.getElementById('score').textContent = 'Mauvaise réponse'
-    } 
+    var qw = document.querySelector('h2')
+    /*Je mets la question en rouge*/
+    qw.style.color='rgb(252, 0, 50)'
+    document.getElementById('score').textContent = 'Mauvaise réponse'
+    /*jappel ma fonction "wrong" pour les réponses fausses avec un délai pour la correction*/
+setTimeout(wrong,2000);
 }
-
+/* La réponse est bonne, je charge la question suivante et j'augmente le score*/
+function right(){
+    creset()
+    score = score + 5
+    var question = document.querySelector('h2')
+    question.style.color='white'  
+    quiz.index = quiz.index+1
+    document.getElementById('question').textContent = quiz.questions[quiz.index].question
+    document.getElementById('reponse1').textContent = quiz.questions[quiz.index].reponse1
+    document.getElementById('reponse2').textContent = quiz.questions[quiz.index].reponse2
+    document.getElementById('reponse3').textContent = quiz.questions[quiz.index].reponse3
+    document.getElementById('reponse4').textContent = quiz.questions[quiz.index].reponse4
+    document.getElementById('reponse11').value = quiz.questions[quiz.index].reponse1
+    document.getElementById('reponse22').value = quiz.questions[quiz.index].reponse2
+    document.getElementById('reponse33').value = quiz.questions[quiz.index].reponse3
+    document.getElementById('reponse44').value = quiz.questions[quiz.index].reponse4
+}
+function wrong(){
+     /*La réponse est fausse, je charge la question suivante sans modifier le score */
+     creset()
+    var question = document.querySelector('h2')
+    question.style.color='white'  
+    quiz.index = quiz.index+1
+    document.getElementById('question').textContent = quiz.questions[quiz.index].question
+    document.getElementById('reponse1').textContent = quiz.questions[quiz.index].reponse1
+    document.getElementById('reponse2').textContent = quiz.questions[quiz.index].reponse2
+    document.getElementById('reponse3').textContent = quiz.questions[quiz.index].reponse3
+    document.getElementById('reponse4').textContent = quiz.questions[quiz.index].reponse4
+    document.getElementById('reponse11').value = quiz.questions[quiz.index].reponse1
+    document.getElementById('reponse22').value = quiz.questions[quiz.index].reponse2
+    document.getElementById('reponse33').value = quiz.questions[quiz.index].reponse3
+    document.getElementById('reponse44').value = quiz.questions[quiz.index].reponse4
+ } 
+}
+/*Mets en vert la bonne réponse et en rouge les mauvaises*/
+function colorized (){
+    for(i=1;i<5;i++){
+    var q2 = document.getElementById('reponse'+i)
+    if(q2.textContent == quiz.questions[quiz.index].correct){
+        q2.style.color='rgb(54, 228, 19)'
+    }
+    else{
+        q2.style.color='red'
+    }
+}}
+/*Remets les couleurs en Blanc*/
+function creset(){
+    for(i=1;i<5;i++){
+        var q2 = document.getElementById('reponse'+i)
+        q2.style.color='white'
+}}

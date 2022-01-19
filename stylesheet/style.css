@@ -56,9 +56,9 @@ button{
         cursor: pointer;
       }
     .vrai{
-          color:chartreuse
+          color:rgb(54, 228, 19)
         }
     .faux{
-            color:crimson
+            color:rgb(252, 0, 50)
         }
       
